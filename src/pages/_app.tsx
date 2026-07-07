@@ -19,6 +19,7 @@ import { HeaderContextProvider } from '../providers/header.context';
 import { LocaleContextProvider } from '../providers/locale.context';
 import { ThemeContextProvider, useTheme } from '../providers/theme.context';
 import '../styles/globals.scss';
+import '../styles/landing.scss';
 import { wrapper } from '../store/store';
 import { cookieOptions, getAppType, getIsAppWithFirebase } from '../utils';
 
