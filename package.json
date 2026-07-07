@@ -69,5 +69,8 @@
   },
   "overrides": {
     "@types/minimatch": "5.1.2"
+  },
+  "resolutions": {
+    "@types/minimatch": "5.1.2"
   }
 }
