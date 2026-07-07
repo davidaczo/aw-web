@@ -2,10 +2,10 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { HYDRATE } from 'next-redux-wrapper';
 
 import type { AppState } from '../../../store/store';
-import type { FirebaseUserDetailedDto, UserDetailedDto } from '../../user/store/types';
+import type { UserDetailedDto } from '../../user/store/types';
 
 export interface MeState {
-	data: UserDetailedDto | FirebaseUserDetailedDto | null,
+	data: UserDetailedDto | null,
 }
 
 const initialState: MeState = {
@@ -16,7 +16,7 @@ export const meSlice = createSlice({
 	name: 'me',
 	initialState,
 	reducers: {
-		setData: (state, action: PayloadAction<UserDetailedDto| FirebaseUserDetailedDto | null>) => {
+		setData: (state, action: PayloadAction<UserDetailedDto| null>) => {
 			state.data = action.payload;
 		},
 	},

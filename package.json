@@ -66,5 +66,8 @@
     "postcss": "^8",
     "redux": "^4.2.1",
     "webpack": "^5.94.0"
+  },
+  "overrides": {
+    "@types/minimatch": "5.1.2"
   }
 }

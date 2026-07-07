@@ -236,9 +236,7 @@ const isFirebaseEnabled = process.env.NEXT_PUBLIC_WITH_FIREBASE === 'true';
 // } else {
 // 	adminRoute = require('./genesis-navigation/genesisNavigation').adminRoute;
 // }
-const nav =	isFirebaseEnabled
-	? require('./firebase-navigation/firebaseNavigation')
-	: require('./genesis-navigation/genesisNavigation');
+const nav = require('./firebase-navigation/firebaseNavigation')
 
 export const {
 	privateRoute, publicRoute, publicOnlyRoute, adminRoute, handleError,

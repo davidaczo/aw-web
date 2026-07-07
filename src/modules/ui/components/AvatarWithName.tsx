@@ -5,12 +5,12 @@ import { useSelector } from 'react-redux';
 import Close from '../../../assets/icons/close';
 import { px } from '../../../utils';
 import { selectMe } from '../../me/store/slice';
-import type { UserMinDto } from '../../user/store/types';
+import type {UserDetailedDto, UserMinDto} from '../../user/store/types';
 
 import { Avatar } from './Avatar';
 
 type AvatarWithNameProps = {
- user: UserMinDto,
+ user: UserDetailedDto,
  deleteMode?: boolean,
  onClick?: (e: MouseEvent) => void,
  onDelete?: (e: MouseEvent) => void,
