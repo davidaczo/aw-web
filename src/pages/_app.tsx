@@ -4,7 +4,7 @@ import type { AppProps } from 'next/app';
 import { Poppins } from 'next/font/google';
 import Head from 'next/head';
 import nookies from 'nookies';
-import { FC, useEffect, useState } from 'react';
+import { FC, useEffect } from 'react';
 import { Toaster } from 'react-hot-toast';
 import { Provider } from 'react-redux';
 
@@ -51,12 +51,8 @@ type AppWithStoreProps = {
 };
 
 const AppWithStore: FC<AppWithStoreProps> = ({ Component, pageProps }) => {
-	const [pageLoaded, setPageLoaded] = useState(false);
 	const { isDark } = useTheme();
 	const api = useJsonApi();
-	useEffect(() => {
-		setPageLoaded(true);
-	}, []);
 
 	// eslint-disable-next-line consistent-return
 	useEffect(() => {
@@ -96,21 +92,19 @@ const AppWithStore: FC<AppWithStoreProps> = ({ Component, pageProps }) => {
 				<meta name='viewport' content='width=device-width, initial-scale=1' />
 				<meta name='theme-color' content={isDark ? '#121212' : '#FFFFFF'} />
 			</Head>
-			{pageLoaded && (
-				<NavigationContextProvider>
-					<LocaleContextProvider>
-						<HeaderContextProvider>
-							<ModalsContextProvider>
-								<DropdownsContextProvider>
-									<Toaster toastOptions={toastOptions} />
-									<Component {...pageProps} />
-									{getAppType() !== 'PROD' && <TestModeIndicator />}
-								</DropdownsContextProvider>
-							</ModalsContextProvider>
-						</HeaderContextProvider>
-					</LocaleContextProvider>
-				</NavigationContextProvider>
-			)}
+			<NavigationContextProvider>
+				<LocaleContextProvider>
+					<HeaderContextProvider>
+						<ModalsContextProvider>
+							<DropdownsContextProvider>
+								<Toaster toastOptions={toastOptions} />
+								<Component {...pageProps} />
+								{getAppType() !== 'PROD' && <TestModeIndicator />}
+							</DropdownsContextProvider>
+						</ModalsContextProvider>
+					</HeaderContextProvider>
+				</LocaleContextProvider>
+			</NavigationContextProvider>
 		</main>
 	);
 };
