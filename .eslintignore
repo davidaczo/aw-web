@@ -1,0 +1,6 @@
+next.config.js
+*.d.ts
+src/assets
+build
+public
+postcss.config.js

@@ -1,0 +1,6 @@
+node_modules
+public
+.next
+.env.local
+package.json
+next.config.js

@@ -1,0 +1,16 @@
+$thumb-color: theme('colors.primaryLight');
+$thumb-size: 2px;
+$scroll-background: theme('colors.cardBg');
+
+.modalRoot {
+  &::-webkit-scrollbar {
+    background-color: $scroll-background;
+  }
+
+  * {
+    &::-webkit-scrollbar {
+      background-color: $scroll-background;
+    }
+    scrollbar-color: $thumb-color $scroll-background;
+  }
+}

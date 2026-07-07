@@ -1,0 +1,40 @@
+.svg {
+  --size: calc(calc(var(--radius) * 2 + var(--stroke-width)));
+  --offset: calc(var(--stroke-width) / 2 + var(--radius));
+
+  width: var(--size);
+  height: var(--size);
+  transform: rotate(-90deg);
+
+  &.spinning {
+    animation: spin 0.6s linear infinite;
+  }
+
+  & * {
+    cx: var(--offset);
+    cy: var(--offset);
+    r: var(--radius);
+    fill: transparent;
+  }
+
+  .track {
+    stroke: #fff;
+    stroke-width: var(--stroke-width);
+  }
+
+  .indicator {
+    stroke: theme('colors.primary');;
+    stroke-width: var(--stroke-width);
+    stroke-dasharray: var(--circumference);
+    stroke-dashoffset: var(--progress);
+    stroke-linecap: round;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(-90deg); }
+  50% { transform: rotate(40deg); }
+  100% { transform: rotate(270deg); }
+}
+
+

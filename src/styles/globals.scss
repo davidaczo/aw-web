@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$thumb-color: theme('colors.primaryLight');
+$thumb-size: 4px;
+$scroll-background: theme('colors.pageBg');
+
+body {
+  color: theme('colors.text1');
+  background-color: theme('colors.pageBg');
+
+  &::-webkit-scrollbar {
+    width: $thumb-size;
+    height: $thumb-size;
+    background-color: $scroll-background;
+  }
+
+
+  &::-webkit-scrollbar-thumb {
+    background: $thumb-color;
+    border-radius: 8px;
+  }
+
+  * {
+    &::-webkit-scrollbar {
+      width: $thumb-size;
+      height: $thumb-size;
+      background-color: $scroll-background;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $thumb-color;
+      border-radius: 8px;
+    }
+    scrollbar-width: thin;
+    scrollbar-color: $thumb-color $scroll-background;
+  }
+}
+
+@layer base {
+  :root {
+    --c-primary-50: #ade3dd;
+    --c-primary-40: #97dcd4;
+    --c-primary-30: #80d5cc;
+    --c-primary-20: #66cec3;
+    --c-primary-10: #47c6bb;
+    --c-primary-0: #0dbfb3;
+    --c-primary: #0dbfb3;
+    --c-primary-light: #8D59AF;
+    --c-primary-hover: #DED6EB;
+    --c-error-1: #ff5449;
+    --c-error-bg: #ff5449;
+    --page-background: #FFF;
+    --card-background: #FFF;
+    --card-background2: #FFF;
+    --c-text: #000;
+    --c-text-light: #565656;
+    --c-textP: #FFF;
+    --c-gray-50: #747877;
+    --c-gray-60: #8e9190;
+    --c-gray-70: #a9acaa;
+    --c-gray-80: #c4c7c6;
+    --c-positive: #32CD32;
+    --c-negative: #FF6347;
+  }
+
+  :root[class~="dark"] {
+    --c-primary-50: #ade3dd;
+    --c-primary-40: #97dcd4;
+    --c-primary-30: #80d5cc;
+    --c-primary-20: #66cec3;
+    --c-primary-10: #47c6bb;
+    --c-primary-0: #0dbfb3;
+    --c-primary: #ade3dd;
+    --c-primary-light: #cd8df3;
+    --c-primary-hover: #432E6F;
+    --c-error-1: #ff897d;
+    --c-error-bg: #ff5449;
+    --page-background: #121212;
+    --card-background: #282828;
+    --card-background2: #3f3f3f;
+    --c-text: #FFF;
+    --c-text-light: #BBB;
+    --c-textP: #000;
+    --c-gray-50: #747877;
+    --c-gray-60: #8e9190;
+    --c-gray-70: #a9acaa;
+    --c-gray-80: #c4c7c6;
+    --c-positive: #00FF7F;
+    --c-negative: #FF4500;
+  }
+}
