@@ -22,10 +22,8 @@ type InterceptorFn = (
 	genesisRefreshApi?: AxiosInstance,
 ) => AxiosInstance;
 
-let interceptors: InterceptorFn;
-if (isFirebaseEnabled) {
-	interceptors = require('./interceptors/firebase-interceptors/firebaseInterceptors').default;
-}
+const interceptors = require('./interceptors/firebase-interceptors/firebaseInterceptors').default;
+
 export const getJsonApi = (context: any, getState: any, dispatch?: AppDispatch, router?: NextRouter): AxiosInstance => {
 	const apiHost = getApiHost();
 	const instance = axios.create({ baseURL: apiHost, headers, withCredentials: true });

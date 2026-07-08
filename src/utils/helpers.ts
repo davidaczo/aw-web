@@ -18,11 +18,7 @@ export const getAppType = (): AppType => {
 	return !app || !['DEV', 'UAT', 'PROD'].includes(app) ? 'DEV' : app as AppType;
 }; export const getFrontendHost = () => process.env.NEXT_PUBLIC_FRONTEND_HOST;
 export const getIsAppWithFirebase = () => process.env.NEXT_PUBLIC_WITH_FIREBASE === 'true';
-export const getFirebaseConfig = () => ({
-	projectId: process.env.FIREBASE_PROJECT_ID,
-	clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-	privateKey: process.env.FIREBASE_PRIVATE_KEY,
-});
+
 export const num = (v: string): number => Number.parseInt(v, 10);
 export const capitalize = (s: string) => (!s ? s : s.charAt(0).toUpperCase() + s.slice(1));
 
