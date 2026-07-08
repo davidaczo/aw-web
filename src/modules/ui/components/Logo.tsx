@@ -1,7 +1,6 @@
 import clsx from 'clsx';
-import { FC, useMemo } from 'react';
-
-import { px } from '../../../utils';
+import Image from 'next/image';
+import { FC } from 'react';
 
 type Props = {
 	size?: number,
@@ -9,22 +8,17 @@ type Props = {
 }
 
 export const Logo: FC<Props> = ({ size = 26, className }) => {
-	const sTracking = useMemo(() => Math.round(size * 0.3038), [size]);
-	const sMt = useMemo(() => Math.round(size * 0.406923), [size]);
+	const dimension = Math.round(size * 1.8);
 
 	return (
 		<div className={clsx('flex select-none flex-col items-center whitespace-nowrap', className)}>
-			<div
-				className='scale-y-[0.7] text-center font-semibold uppercase transition-all duration-300'
-				style={{
-					fontSize: px(size),
-					letterSpacing: px(sTracking),
-					paddingLeft: px(sTracking),
-					marginTop: px(-sMt),
-				}}
-			>
-				test
-			</div>
+			<Image
+				src='/images/logo.png'
+				alt='Logo'
+				width={dimension}
+				height={dimension}
+				priority
+			/>
 		</div>
 	);
 };

@@ -88,7 +88,7 @@ const AppWithStore: FC<AppWithStoreProps> = ({ Component, pageProps }) => {
 	return (
 		<main className={poppins.className}>
 			<Head>
-				<title>test</title>
+				<title>Cordiss</title>
 				<meta name='viewport' content='width=device-width, initial-scale=1' />
 				<meta name='theme-color' content={isDark ? '#121212' : '#FFFFFF'} />
 			</Head>

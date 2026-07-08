@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Image from 'next/image';
 import { useEffect } from 'react';
 
 const HomePage: NextPage = () => {
@@ -24,16 +25,16 @@ const HomePage: NextPage = () => {
 	return (
 		<>
 			<Head>
-				<title>AW-SERVICE — Platformă field service</title>
+				<title>Cordiss — Platformă field service</title>
 			</Head>
 
 			<header>
 				<div className='header-inner'>
 					<div className='logo'>
-						<span className='mark'>✓</span>
-						aW-SERVICE
+						<Image src='/images/logo.png' alt='Cordiss' width={22} height={22} />
+						Cordiss
 					</div>
-					<a className='btn btn-primary' href='mailto:daczdvid@gmail.com?subject=Solicitare%20demo%20AW-SERVICE'>Solicită un demo</a>
+					<a className='btn btn-primary' href='mailto:daczdvid@gmail.com?subject=Solicitare%20demo%20Cordiss'>Solicită un demo</a>
 				</div>
 			</header>
 
@@ -41,11 +42,10 @@ const HomePage: NextPage = () => {
 				<section className='hero wrap'>
 					<div className='hero-grid'>
 						<div>
-							<div className='eyebrow'>Platformă field service</div>
 							<h1>Platformă inteligentă pentru service&nbsp;și lucrări din teren.</h1>
 							<p className='lede'>Fluxuri de lucru digitalizate, monitorizare în timp real și rapoarte automate — eficiență maximă, fără birocrație.</p>
 							<div className='hero-ctas'>
-								<a className='btn btn-primary' href='mailto:daczdvid@gmail.com?subject=Solicitare%20demo%20AW-SERVICE'>Solicită un demo gratuit</a>
+								<a className='btn btn-primary' href='mailto:daczdvid@gmail.com?subject=Solicitare%20demo%20Cordiss'>Solicită un demo gratuit</a>
 								<a className='btn btn-ghost' href='#problema'>Vezi cum funcționează ↓</a>
 							</div>
 						</div>
@@ -69,16 +69,12 @@ const HomePage: NextPage = () => {
 									<span className='v'>Tractor · SN 88214</span>
 								</div>
 								<div className='ticket-row'>
-									<span className='k'>Ore funcționare</span>
-									<span className='v'>312,4 h</span>
-								</div>
-								<div className='ticket-row'>
-									<span className='k'>Suprafață</span>
-									<span className='v'>184 ha</span>
-								</div>
-								<div className='ticket-row'>
 									<span className='k'>Semnătură client</span>
 									<span className='v'>✓ 14 iun, 16:42</span>
+								</div>
+								<div className='ticket-row highlight'>
+									<span className='k'>Satisfacția clientului</span>
+									<span className='v accent'>100% ✓</span>
 								</div>
 							</div>
 						</div>
@@ -87,26 +83,37 @@ const HomePage: NextPage = () => {
 
 				<section className='section alt' data-reveal>
 					<div className='wrap'>
-						<div className='section-head'>
-							<div className='eyebrow'>Rezultate</div>
-							<h2>AW-SERVICE: eficiența cuantificată</h2>
-							<p className='sub'>Rezultate concrete, măsurabile, de la prima zi de utilizare.</p>
-						</div>
-						<div className='outcomes'>
-							<div className='outcome-card'>
-								<div className='tag'>REZULTAT · 01</div>
-								<h3>Capacitate de lucru</h3>
-								<p>Creștere fără angajări suplimentare. Calendarul inteligent și monitorizarea live elimină timpii morți.</p>
+						<div className='results-grid'>
+							<div className='shot results-shot'>
+								<Image src='/images/calendar-list.png' alt='Calendarul echipei cu lucrările active, în aplicația Cordiss' width={640} height={1316} />
 							</div>
-							<div className='outcome-card'>
-								<div className='tag'>REZULTAT · 02</div>
-								<h3>Reducere administrativ</h3>
-								<p>Formulare digitale în 3 pași și cronometru în timp real elimină introducerea manuală a datelor.</p>
-							</div>
-							<div className='outcome-card'>
-								<div className='tag'>REZULTAT · 03</div>
-								<h3>Zero clienți pierduți</h3>
-								<p>Baza de date centralizată cu filtre avansate garantează că nicio comandă nu se pierde.</p>
+							<div>
+								<div className='eyebrow'>Rezultate</div>
+								<h2>Cordiss: eficiența cuantificată</h2>
+								<p className='sub'>Rezultate concrete, măsurabile, de la prima zi de utilizare.</p>
+								<div className='outcomes-table'>
+									<div className='outcome-row'>
+										<div className='tag'>01</div>
+										<div>
+											<h3>Capacitate de lucru</h3>
+											<p>Creștere fără angajări suplimentare. Calendarul inteligent și monitorizarea live elimină timpii morți.</p>
+										</div>
+									</div>
+									<div className='outcome-row'>
+										<div className='tag'>02</div>
+										<div>
+											<h3>Reducere administrativ</h3>
+											<p>Formulare digitale în 3 pași și cronometru în timp real elimină introducerea manuală a datelor.</p>
+										</div>
+									</div>
+									<div className='outcome-row'>
+										<div className='tag'>03</div>
+										<div>
+											<h3>Zero clienți pierduți</h3>
+											<p>Baza de date centralizată cu filtre avansate garantează că nicio comandă nu se pierde.</p>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -156,7 +163,7 @@ const HomePage: NextPage = () => {
 						<div className='section-head'>
 							<div className='eyebrow'>Soluția</div>
 							<h2>Control și transparență într-o singură platformă</h2>
-							<p className='sub'>AW-SERVICE conectează coordonarea de la birou (interfața Admin) cu activitatea tehnicienilor din teren (aplicația mobilă) — o platformă cu două roluri care acoperă întregul flux de service, de la alocarea lucrării până la semnătura clientului.</p>
+							<p className='sub'>Cordiss conectează coordonarea de la birou (interfața Admin) cu activitatea tehnicienilor din teren (aplicația mobilă) — o platformă cu două roluri care acoperă întregul flux de service, de la alocarea lucrării până la semnătura clientului.</p>
 						</div>
 
 						<div className='roles'>
@@ -193,6 +200,36 @@ const HomePage: NextPage = () => {
 								Utilizare maximă a capacității echipei și facturare imediată
 							</li>
 						</ul>
+
+						<div className='flow-strip'>
+							<div className='flow-step'>
+								<div className='shot small'>
+									<Image src='/images/job-new.png' alt='Creare lucrare nouă în 4 pași' width={628} height={1324} />
+								</div>
+								<div className='flow-label'>01 · Alocare</div>
+							</div>
+							<span className='flow-arrow'>→</span>
+							<div className='flow-step'>
+								<div className='shot small'>
+									<Image src='/images/job-active.png' alt='Sesiune de lucru activă, cronometrată în timp real' width={632} height={1310} />
+								</div>
+								<div className='flow-label'>02 · Execuție</div>
+							</div>
+							<span className='flow-arrow'>→</span>
+							<div className='flow-step'>
+								<div className='shot small'>
+									<Image src='/images/signature.png' alt='Semnătură digitală a clientului pe ecranul telefonului' width={680} height={1296} />
+								</div>
+								<div className='flow-label'>03 · Semnătură</div>
+							</div>
+							<span className='flow-arrow'>→</span>
+							<div className='flow-step'>
+								<div className='shot small'>
+									<Image src='/images/report-preview.png' alt='Raport PDF generat automat' width={640} height={1326} />
+								</div>
+								<div className='flow-label'>04 · Raport</div>
+							</div>
+						</div>
 					</div>
 				</section>
 
@@ -262,11 +299,8 @@ const HomePage: NextPage = () => {
 							</ul>
 							<div className='sign-card'>
 								<div className='eyebrow'>Confirmare client</div>
-								<div className='sign-line'>
-									<svg width='220' height='34' viewBox='0 0 220 34' fill='none'>
-										<path d='M4 26 C 18 6, 30 6, 40 20 C 48 30, 56 30, 62 16 C 68 4, 78 4, 84 18 C 90 30, 98 26, 104 14 C 112 0, 128 4, 136 18 C 142 28, 150 22, 158 12 C 166 2, 180 6, 190 20 C 196 28, 204 24, 212 14' stroke='var(--accent)' strokeWidth='2' strokeLinecap='round' fill='none' />
-									</svg>
-									<span className='cap'>M. Popescu · 14.06 · 16:42</span>
+								<div className='shot'>
+									<Image src='/images/signature.png' alt='Ecran de semnătură client, cu numele semnatarului și data adăugate automat' width={680} height={1296} />
 								</div>
 							</div>
 						</div>
@@ -312,9 +346,9 @@ const HomePage: NextPage = () => {
 				<section className='cta-section wrap' data-reveal>
 					<div className='eyebrow'>Următorul pas</div>
 					<h2>Maximalizați eficiența echipei chiar de astăzi!</h2>
-					<p className='lede'>Eliminați haosul din gestionarea lucrărilor din teren și ridicați experiența clienților la un alt nivel cu AW-SERVICE. Solicitați un demo personalizat!</p>
+					<p className='lede'>Eliminați haosul din gestionarea lucrărilor din teren și ridicați experiența clienților la un alt nivel cu Cordiss. Solicitați un demo personalizat!</p>
 					<div className='cta-btnrow'>
-						<a className='btn btn-primary' href='mailto:daczdvid@gmail.com?subject=Solicitare%20demo%20AW-SERVICE'>Solicită un demo gratuit</a>
+						<a className='btn btn-primary' href='mailto:daczdvid@gmail.com?subject=Solicitare%20demo%20Cordiss'>Solicită un demo gratuit</a>
 					</div>
 					<div className='contact-card'>
 						<div className='contact-row'>
@@ -332,8 +366,8 @@ const HomePage: NextPage = () => {
 
 			<footer className='wrap'>
 				<div className='footer-inner'>
-					<p className='tag'>„AW-SERVICE — platforma care transformă haosul din teren în eficiență măsurabilă.”</p>
-					<p className='fine'>© 2026 AW-SERVICE</p>
+					<p className='tag'>„Cordiss — platforma care transformă haosul din teren în eficiență măsurabilă.”</p>
+					<p className='fine'>© 2026 Cordiss</p>
 				</div>
 			</footer>
 		</>
@@ -341,4 +375,3 @@ const HomePage: NextPage = () => {
 };
 
 export default HomePage;
-

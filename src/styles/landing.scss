@@ -99,14 +99,11 @@ header {
 	padding: 16px 28px; max-width: 1040px; margin: 0 auto;
 }
 .logo {
-	font-family: var(--mono); font-weight: 700; font-size: 17px; letter-spacing: 0.02em;
+	font-family: var(--mono); font-weight: 700; font-size: 22px; letter-spacing: 0.02em;
 	display: flex; align-items: center; gap: 8px;
 }
-.logo .mark {
-	width: 22px; height: 22px; border-radius: 50%;
-	border: 1.5px solid var(--accent); color: var(--accent);
-	display: flex; align-items: center; justify-content: center;
-	font-size: 12px; font-weight: 700;
+.logo img {
+	border-radius: 4px;
 }
 .btn {
 	font-family: var(--sans); font-weight: 600; font-size: 14.5px;
@@ -150,6 +147,22 @@ header {
 .ticket-row:last-of-type { border-bottom: none; }
 .ticket-row .k { color: var(--ink-faint); }
 .ticket-row .v { color: var(--ink); font-weight: 600; text-align: right; }
+.ticket-row.highlight {
+	margin: 6px -24px -20px; padding: 12px 24px; border-radius: 0 0 6px 6px;
+	background: var(--accent-soft); border-bottom: none;
+}
+.ticket-row.highlight .k { color: var(--accent-strong); font-weight: 700; }
+.ticket-row.highlight .v.accent { color: var(--accent-strong); font-size: 15.5px; font-weight: 800; }
+.shot {
+	background: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: 20px;
+	box-shadow: var(--shadow);
+	overflow: hidden;
+	line-height: 0;
+}
+.shot img { display: block; width: 100%; height: auto; }
+.shot.small { border-radius: 14px; max-width: 150px; }
 .stamp {
 	position: absolute; top: -14px; right: -10px;
 	width: 92px; height: 92px; border-radius: 50%;
@@ -175,14 +188,13 @@ header {
 	.stamp { animation: none; opacity: 1; }
 }
 
-.outcomes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.outcome-card {
-	background: var(--surface); border: 1px solid var(--border); border-radius: 6px;
-	padding: 24px 22px;
-}
-.outcome-card .tag { font-family: var(--mono); font-size: 11.5px; color: var(--accent); letter-spacing: 0.06em; }
-.outcome-card h3 { font-family: var(--sans); font-size: 17.5px; font-weight: 700; margin-top: 10px; }
-.outcome-card p { color: var(--ink-soft); font-size: 14.5px; margin-top: 8px; }
+.results-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; }
+.results-shot { max-width: 340px; margin: 0 auto; }
+.outcomes-table { display: grid; gap: 0; margin-top: 28px; border-top: 1px solid var(--border); }
+.outcome-row { display: flex; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--border); }
+.outcome-row .tag { flex: none; font-family: var(--mono); font-size: 12px; color: var(--accent); letter-spacing: 0.06em; padding-top: 2px; }
+.outcome-row h3 { font-family: var(--sans); font-size: 16px; font-weight: 700; }
+.outcome-row p { color: var(--ink-soft); font-size: 14px; margin-top: 5px; }
 
 .problems { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border-strong); border: 1px solid var(--border-strong); border-radius: 6px; overflow: hidden; }
 .problem-card { background: var(--surface); padding: 26px 24px; }
@@ -218,6 +230,12 @@ header {
 .role-flow { display: flex; flex-direction: column; align-items: center; gap: 6px; font-family: var(--mono); font-size: 11px; color: var(--accent); }
 .role-flow .arrow { font-size: 20px; }
 .role-steps { display: flex; gap: 8px; font-family: var(--mono); font-size: 10px; color: var(--ink-faint); text-align: center; flex-wrap: wrap; justify-content: center; margin-top: 6px; }
+
+.flow-strip { display: flex; align-items: flex-start; gap: 14px; margin-top: 48px; }
+.flow-step { flex: 1; min-width: 0; text-align: center; }
+.flow-step .shot { max-width: 100%; margin: 0 auto; }
+.flow-label { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 10px; }
+.flow-arrow { flex: none; align-self: center; margin-top: 70px; color: var(--accent); font-size: 18px; }
 
 .benefit-list { list-style: none; margin: 36px 0 0; padding: 0; display: grid; gap: 12px; }
 .benefit-list li { display: flex; gap: 12px; align-items: flex-start; font-size: 15.5px; color: var(--ink); }
@@ -261,10 +279,9 @@ header {
 .sign-feature { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin-top: 8px; }
 .sign-card {
 	background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 26px;
+	max-width: 260px; margin: 0 auto;
 }
-.sign-line { border-bottom: 1px solid var(--border-strong); padding-bottom: 10px; margin-top: 26px; position: relative; height: 44px; }
-.sign-line svg { position: absolute; bottom: 6px; left: 0; }
-.sign-line .cap { font-family: var(--mono); font-size: 10.5px; color: var(--ink-faint); position: absolute; bottom: -18px; left: 0; letter-spacing: 0.05em; }
+.sign-card .shot { margin-top: 18px; }
 .feat3 { list-style: none; margin: 0; padding: 0; display: grid; gap: 20px; }
 .feat3 li { display: flex; gap: 14px; }
 .feat3 .idx { font-family: var(--mono); color: var(--accent); font-weight: 700; font-size: 13px; flex: none; padding-top: 2px; }
@@ -300,11 +317,17 @@ footer { border-top: 1px solid var(--border); padding: 36px 0; }
 @media (max-width: 860px) {
 	.hero-grid { grid-template-columns: 1fr; }
 	.ticket { transform: none; margin-top: 12px; }
-	.outcomes { grid-template-columns: 1fr; }
+	.results-grid { grid-template-columns: 1fr; }
+	.results-shot { max-width: 220px; }
 	.problems { grid-template-columns: 1fr; }
 	.roles { grid-template-columns: 1fr; }
 	.role-flow { flex-direction: row; }
 	.role-flow .arrow { transform: rotate(90deg); }
+	.flow-strip { flex-direction: column; align-items: center; }
+	.flow-strip .shot.small { max-width: 180px; }
+	.flow-arrow { transform: rotate(90deg); margin-top: 0; }
+	.section-head.with-shot { grid-template-columns: 1fr; }
+	.section-head.with-shot .shot { max-width: 160px; margin: 0 auto; }
 	.timeline { grid-template-columns: 1fr; gap: 28px; }
 	.timeline::before { display: none; }
 	.sign-feature { grid-template-columns: 1fr; gap: 28px; }
