@@ -31,7 +31,7 @@ const HomePage: NextPage = () => {
 			<header>
 				<div className='header-inner'>
 					<div className='logo'>
-						<Image src='/images/logo.png' alt='Cordiss' width={22} height={22} />
+						<Image src='/images/logo.png' alt='Cordiss' width={32} height={32} />
 						Cordiss
 					</div>
 					<a className='btn btn-primary' href='mailto:daczdvid@gmail.com?subject=Solicitare%20demo%20Cordiss'>Solicită un demo</a>
@@ -57,7 +57,7 @@ const HomePage: NextPage = () => {
 									✓ VERIFICAT
 								</div>
 								<div className='ticket-head'>
-									<span className='id'>BON #AW-4471</span>
+									<span className='id'>BON #CO-4471</span>
 									<span className='status'>FINALIZAT</span>
 								</div>
 								<div className='ticket-row'>
@@ -81,6 +81,13 @@ const HomePage: NextPage = () => {
 					</div>
 				</section>
 
+				<div className='tear'>
+					<p className='tear-text'>
+						de la haos de hârtii&nbsp; — &nbsp;la
+						<b>un singur flux digital</b>
+					</p>
+				</div>
+
 				<section className='section alt' data-reveal>
 					<div className='wrap'>
 						<div className='results-grid'>
@@ -88,26 +95,25 @@ const HomePage: NextPage = () => {
 								<Image src='/images/calendar-list.png' alt='Calendarul echipei cu lucrările active, în aplicația Cordiss' width={640} height={1316} />
 							</div>
 							<div>
-								<div className='eyebrow'>Rezultate</div>
-								<h2>Cordiss: eficiența cuantificată</h2>
+								<h2><span className='hl'>Cordiss</span>: eficiența cuantificată</h2>
 								<p className='sub'>Rezultate concrete, măsurabile, de la prima zi de utilizare.</p>
 								<div className='outcomes-table'>
 									<div className='outcome-row'>
-										<div className='tag'>01</div>
+										<div className='tag'>+25%</div>
 										<div>
 											<h3>Capacitate de lucru</h3>
 											<p>Creștere fără angajări suplimentare. Calendarul inteligent și monitorizarea live elimină timpii morți.</p>
 										</div>
 									</div>
 									<div className='outcome-row'>
-										<div className='tag'>02</div>
+										<div className='tag'>30%</div>
 										<div>
 											<h3>Reducere administrativ</h3>
 											<p>Formulare digitale în 3 pași și cronometru în timp real elimină introducerea manuală a datelor.</p>
 										</div>
 									</div>
 									<div className='outcome-row'>
-										<div className='tag'>03</div>
+										<div className='tag'>0</div>
 										<div>
 											<h3>Zero clienți pierduți</h3>
 											<p>Baza de date centralizată cu filtre avansate garantează că nicio comandă nu se pierde.</p>
@@ -151,37 +157,45 @@ const HomePage: NextPage = () => {
 					</div>
 				</section>
 
-				<div className='tear'>
-					<p className='tear-text'>
-						de la haos de hârtii&nbsp; — &nbsp;la
-						<b>un singur flux digital</b>
-					</p>
-				</div>
-
 				<section className='section' data-reveal>
 					<div className='wrap'>
 						<div className='section-head'>
 							<div className='eyebrow'>Soluția</div>
-							<h2>Control și transparență într-o singură platformă</h2>
-							<p className='sub'>Cordiss conectează coordonarea de la birou (interfața Admin) cu activitatea tehnicienilor din teren (aplicația mobilă) — o platformă cu două roluri care acoperă întregul flux de service, de la alocarea lucrării până la semnătura clientului.</p>
+							<h2>Control și transparență</h2>
+							<p className='sub'>O platformă cu două roluri care conectează biroul și terenul — de la alocarea lucrării până la semnătura clientului.</p>
 						</div>
 
 						<div className='roles'>
 							<div className='role-box'>
-								<div className='who'>Birou</div>
+								<div className='role-icon' aria-hidden='true'>
+									<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth={1.6} strokeLinecap='round' strokeLinejoin='round'>
+										<rect x='2.5' y='4' width='19' height='12.5' rx='1.5' />
+										<path d='M9 20.5h6M12 16.5v4' />
+									</svg>
+								</div>
+								<div className='who'><i className='dot' aria-hidden='true' />Birou</div>
 								<div className='what'>Interfața Admin</div>
 							</div>
-							<div className='role-flow'>
-								<span>ALOCARE</span>
-								<span className='arrow'>→</span>
-								<span>EXECUȚIE</span>
-								<span className='arrow'>→</span>
-								<span>SEMNĂTURĂ</span>
-								<span className='arrow'>→</span>
-								<span>RAPORT</span>
+
+							<div className='role-connector'>
+								<div className='connector-track'>
+									<span className='wire' aria-hidden='true'><i className='pulse' /></span>
+									<span className='node'>ALOCARE</span>
+									<span className='node'>EXECUȚIE</span>
+									<span className='node'>SEMNĂTURĂ</span>
+									<span className='node'>RAPORT</span>
+								</div>
+								<div className='connector-sync'>⇄ Sincronizare în timp real</div>
 							</div>
+
 							<div className='role-box'>
-								<div className='who'>Teren</div>
+								<div className='role-icon' aria-hidden='true'>
+									<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth={1.6} strokeLinecap='round' strokeLinejoin='round'>
+										<rect x='6.5' y='2.5' width='11' height='19' rx='2.5' />
+										<path d='M10.5 18.5h3' />
+									</svg>
+								</div>
+								<div className='who'><i className='dot' aria-hidden='true' />Teren</div>
 								<div className='what'>Aplicația mobilă</div>
 							</div>
 						</div>
@@ -241,20 +255,47 @@ const HomePage: NextPage = () => {
 						</div>
 						<div className='timeline'>
 							<div className='timeline-item'>
-								<div className='dot'>1</div>
-								<div className='tstamp'>08:14 · START</div>
+								<div className='step-icon' aria-hidden='true'>
+									<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth={1.6} strokeLinecap='round' strokeLinejoin='round'>
+										<path d='M3 8.8A1.8 1.8 0 0 1 4.8 7H7l1.2-1.9h7.6L17 7h2.2A1.8 1.8 0 0 1 21 8.8v8.4A1.8 1.8 0 0 1 19.2 19H4.8A1.8 1.8 0 0 1 3 17.2z' />
+										<circle cx='12' cy='13' r='3.2' />
+									</svg>
+								</div>
+								<div className='step-time'>
+									<span className='time'>08:14</span>
+									<span className='phase'>START</span>
+								</div>
 								<h3>Verificare foto obligatorie</h3>
 								<p>Tehnicianul documentează starea inițială și contorul prin fotografii la pornirea intervenției.</p>
 							</div>
+							<span className='timeline-arrow' aria-hidden='true'>→</span>
 							<div className='timeline-item'>
-								<div className='dot'>2</div>
-								<div className='tstamp'>16:42 · STOP</div>
+								<div className='step-icon' aria-hidden='true'>
+									<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth={1.6} strokeLinecap='round' strokeLinejoin='round'>
+										<path d='M12 3l7 2.4v5.1c0 4.2-2.9 7.4-7 8.5-4.1-1.1-7-4.3-7-8.5V5.4z' />
+										<path d='M9 12l2.2 2.2L15 10.4' />
+									</svg>
+								</div>
+								<div className='step-time'>
+									<span className='time'>16:42</span>
+									<span className='phase'>STOP</span>
+								</div>
 								<h3>Dovadă foto la finalizare</h3>
 								<p>Fotografiile de la oprire demonstrează lucrarea efectuată, reducând drastic disputele cu clienții.</p>
 							</div>
+							<span className='timeline-arrow' aria-hidden='true'>→</span>
 							<div className='timeline-item'>
-								<div className='dot'>3</div>
-								<div className='tstamp'>16:43 · RAPORT</div>
+								<div className='step-icon' aria-hidden='true'>
+									<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth={1.6} strokeLinecap='round' strokeLinejoin='round'>
+										<path d='M14 3H7.5A1.5 1.5 0 0 0 6 4.5v15A1.5 1.5 0 0 0 7.5 21h9a1.5 1.5 0 0 0 1.5-1.5V7z' />
+										<path d='M14 3v4h4' />
+										<path d='M9 13h6M9 16.5h4' />
+									</svg>
+								</div>
+								<div className='step-time'>
+									<span className='time'>16:43</span>
+									<span className='phase'>RAPORT</span>
+								</div>
 								<h3>PDF generat instant</h3>
 								<p>Pe baza marcajelor temporale și fotografiilor salvate, aplicația generează un raport oficial PDF în câteva secunde.</p>
 							</div>
@@ -266,46 +307,6 @@ const HomePage: NextPage = () => {
 					</div>
 				</section>
 
-				<section className='section' data-reveal>
-					<div className='wrap'>
-						<div className='section-head'>
-							<div className='eyebrow'>Închidere lucrare</div>
-							<h2>Cash-flow mai rapid, clienți mulțumiți</h2>
-							<p className='sub'>Procesul de validare și facturare se reduce de la câteva zile la câteva minute.</p>
-						</div>
-						<div className='sign-feature'>
-							<ul className='feat3'>
-								<li>
-									<span className='idx'>01</span>
-									<div>
-										<h3>Validare la fața locului</h3>
-										<p>Clientul semnează confirmarea de primire direct pe ecranul telefonului, cu degetul — fără hârtii.</p>
-									</div>
-								</li>
-								<li>
-									<span className='idx'>02</span>
-									<div>
-										<h3>Semnătură integrată automat</h3>
-										<p>Numele semnatarului și data exactă sunt incluse automat și securizat în raportul PDF.</p>
-									</div>
-								</li>
-								<li>
-									<span className='idx'>03</span>
-									<div>
-										<h3>Facturare imediată</h3>
-										<p>Documentul poate fi partajat instant, accelerând ciclul de facturare și încasare.</p>
-									</div>
-								</li>
-							</ul>
-							<div className='sign-card'>
-								<div className='eyebrow'>Confirmare client</div>
-								<div className='shot'>
-									<Image src='/images/signature.png' alt='Ecran de semnătură client, cu numele semnatarului și data adăugate automat' width={680} height={1296} />
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
 
 				<section className='section alt' data-reveal>
 					<div className='wrap'>
