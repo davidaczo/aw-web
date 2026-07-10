@@ -22,6 +22,8 @@ const FLOW_IMAGES = [
 
 const TIMELINE_TIMES = ['08:14', '16:42', '16:43'];
 
+const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL;
+
 const TIMELINE_ICONS = [
 	(
 		<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth={1.6} strokeLinecap='round' strokeLinejoin='round'>
@@ -400,7 +402,7 @@ const HomePage: NextPage = () => {
 					<p className='lede'>{t.cta.lede}</p>
 					<ContactForm t={t.form} />
 					<div className='contact-methods'>
-						<a className='contact-method' href='mailto:david.daczo@cordiss.com?subject=Solicitare%20demo%20Cordiss'>
+						<a className='contact-method' href={`mailto:${contactEmail}?subject=Solicitare%20demo%20Cordiss`}>
 							<span className='cm-icon' aria-hidden='true'>
 								<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth={1.6} strokeLinecap='round' strokeLinejoin='round'>
 									<rect x='3' y='5' width='18' height='14' rx='2' />
@@ -409,7 +411,7 @@ const HomePage: NextPage = () => {
 							</span>
 							<span className='cm-text'>
 								<span className='cm-label'>{t.contact.email}</span>
-								<span className='cm-value'>david.daczo@cordiss.com</span>
+								<span className='cm-value'>{contactEmail}</span>
 							</span>
 						</a>
 						<a className='contact-method' href='tel:+40744885242'>
