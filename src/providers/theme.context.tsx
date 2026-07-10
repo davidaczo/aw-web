@@ -16,15 +16,12 @@ export const ThemeContext = createContext<ThemeContextValue>({
 });
 
 export const ThemeContextProvider = ({ children }: PropsWithChildren) => {
-	const [theme, setTheme] = useState<Theme>('system');
-	const [isDark, setDark] = useState(false);
+	const [theme, setTheme] = useState<Theme>('dark');
+	const [isDark, setDark] = useState(true);
 
+	// App is dark-only: always apply the dark theme.
 	const applyTheme = useCallback(() => {
-		if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-			document.documentElement.classList.add('dark');
-		} else {
-			document.documentElement.classList.remove('dark');
-		}
+		document.documentElement.classList.add('dark');
 	}, []);
 
 	useEffect(() => {

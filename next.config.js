@@ -16,6 +16,10 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  i18n: {
+    locales: ['ro', 'en', 'hu'],
+    defaultLocale: 'ro',
+  },
 }
 
 module.exports = withPWA(nextConfig);
