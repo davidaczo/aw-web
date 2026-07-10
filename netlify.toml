@@ -4,6 +4,7 @@
 
 [build.environment]
   SECRETS_SCAN_OMIT_PATHS = ".netlify/.next/cache/**"
+  SECRETS_SCAN_OMIT_KEYS = "CONTACT_TO_EMAIL"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
