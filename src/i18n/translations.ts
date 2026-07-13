@@ -10,7 +10,7 @@ const ro = {
 	meta: { title: 'Cordiss — Platformă field service' },
 	nav: { demo: 'Solicită un demo' },
 	hero: {
-		title: 'Compania ta pierde ore prețioase în administrație haotică, nu în lucrări.',
+		title: 'Compania ta pierde ore prețioase în administrație haotică, nu în lucrări facturabile.',
 		lede: 'Nu ai vizibilitate asupra cine și ce lucrează în teren, iar planificarea lucrărilor viitoare devine haos — Cordiss elimină ineficiența cu fluxuri digitale, monitorizare live și programare clară a echipei.',
 		ctaPrimary: 'Solicită un demo gratuit',
 		ctaGhost: 'Vezi cum funcționează ↓',

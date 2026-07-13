@@ -22,7 +22,7 @@ const FLOW_IMAGES = [
 
 const TIMELINE_TIMES = ['08:14', '16:42', '16:43'];
 
-const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL;
+const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? 'david.daczo@cordiss.com';
 
 const TIMELINE_ICONS = [
 	(
