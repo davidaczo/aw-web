@@ -10,8 +10,8 @@ const ro = {
 	meta: { title: 'Cordiss — Platformă field service' },
 	nav: { demo: 'Solicită un demo' },
 	hero: {
-		title: 'Platformă inteligentă pentru service și lucrări din teren.',
-		lede: 'Fluxuri de lucru digitalizate, monitorizare în timp real și rapoarte automate — eficiență maximă, fără birocrație.',
+		title: 'Compania ta pierde ore prețioase în administrație haotică, nu în lucrări.',
+		lede: 'Nu ai vizibilitate asupra cine și ce lucrează în teren, iar planificarea lucrărilor viitoare devine haos — Cordiss elimină ineficiența cu fluxuri digitale, monitorizare live și programare clară a echipei.',
 		ctaPrimary: 'Solicită un demo gratuit',
 		ctaGhost: 'Vezi cum funcționează ↓',
 	},
@@ -19,14 +19,12 @@ const ro = {
 		done: 'FINALIZAT', verified: '✓ VERIFICAT',
 		client: 'Client', machine: 'Mașină', signature: 'Semnătură client', satisfaction: 'Satisfacția clientului',
 	},
-	tear: { from: 'De la haos de hârtii', to: 'la un singur flux digital' },
+	tear: { from: 'De la haos de hârtii și mesaje', to: 'la un singur flux digital' },
 	results: {
-		titleSuffix: ': eficiența cuantificată',
-		sub: 'Cordiss este compania din spatele platformei tale de field service.',
 		outcomes: [
-			{ tag: '+25%', title: 'Capacitate de lucru', desc: 'Creștere fără angajări suplimentare. Calendarul inteligent și monitorizarea live elimină timpii morți.' },
-			{ tag: '30%', title: 'Reducere administrativ', desc: 'Formulare digitale în 3 pași și cronometru în timp real elimină introducerea manuală a datelor.' },
-			{ tag: '0', title: 'Zero clienți pierduți', desc: 'Baza de date centralizată cu filtre avansate garantează că nicio comandă nu se pierde.' },
+			{ tag: '+25%', title: 'Capacitate de lucru' },
+			{ tag: '30%', title: 'Reducere administrativ' },
+			{ tag: '0', title: 'Zero clienți pierduți' },
 		],
 	},
 	problems: {
@@ -47,7 +45,6 @@ const ro = {
 		office: { who: 'Birou', what: 'Interfața Admin' },
 		field: { who: 'Teren', what: 'Aplicația mobilă' },
 		nodes: ['ALOCARE', 'EXECUȚIE', 'SEMNĂTURĂ', 'RAPORT'],
-		sync: '⇄ Sincronizare în timp real',
 		benefits: [
 			'Mai puțină birocrație pentru tehnician',
 			'Monitorizare 100% pentru clienți și orele de lucru',
@@ -72,13 +69,13 @@ const ro = {
 	},
 	security: {
 		eyebrow: 'Securitate',
-		title: 'Infrastructură profesională de business',
+		title: 'Datele tale, în siguranță',
 		rows: [
-			{ label: 'Autentificare', title: 'Autentificare securizată', desc: 'Acces protejat prin Firebase Auth, cu opțiune de autentificare în doi pași (2FA) pentru datele critice ale companiei.' },
-			{ label: 'Roluri', title: 'Acces pe bază de roluri', desc: 'Administratorii au control complet; tehnicienii folosesc o interfață simplificată, concentrată strict pe sarcinile proprii.' },
-			{ label: 'Stocare date', title: 'Stocare conformă GDPR', desc: 'Datele de service rămân în arhivă securizată 30 de zile la dezactivarea unui cont, prevenind pierderea accidentală.' },
+			{ label: 'Acces', title: 'Doar oamenii tăi au acces', desc: 'Fiecare angajat intră cu propriul cont — nimeni din afara echipei nu poate vedea datele companiei sau ale clienților tăi.' },
+			{ label: 'Roluri', title: 'Fiecare vede doar ce trebuie', desc: 'Administratorii au acces complet; tehnicienii văd doar lucrările proprii, fără date care nu îi privesc.' },
+			{ label: 'Criptare', title: 'Datele sunt criptate, mereu', desc: 'Fie că sunt introduse din aplicația de teren sau văzute în panoul de administrare, datele circulă și sunt stocate criptat, protejate de accesul neautorizat.' },
 		],
-		callout: 'Conformitate garantată: platforma respectă standardele europene de protecție a datelor, oferind liniște managerilor și clienților.',
+		callout: 'Siguranța datelor nu e un titlu de marketing — e simplu: acces controlat, conturi protejate, nimic pierdut din greșeală.',
 	},
 	cta: {
 		eyebrow: 'Următorul pas',
@@ -88,11 +85,12 @@ const ro = {
 	form: {
 		headEyebrow: 'Solicită un demo',
 		headText: 'Completați formularul — vă contactăm în cel mai scurt timp.',
-		name: 'Nume', company: 'Companie', email: 'Email *', phone: 'Telefon (opțional)',
+		name: 'Nume *', company: 'Companie *', email: 'Email *', phone: 'Telefon (opțional)',
 		message: 'Câteva detalii despre echipa dvs. (opțional)',
 		submit: 'Trimite solicitarea', submitting: 'Se trimite…',
 		success: '✓ Mulțumim! V-am primit solicitarea și vă contactăm în curând.',
 		error: 'A apărut o eroare. Încercați din nou sau scrieți-ne la david.daczo@cordiss.com.',
+		required: 'Vă rugăm completați numele, compania și emailul.',
 	},
 	contact: { email: 'Email', phone: 'Telefon' },
 	footer: {
@@ -107,8 +105,8 @@ const en: Dict = {
 	meta: { title: 'Cordiss — Field service platform' },
 	nav: { demo: 'Request a demo' },
 	hero: {
-		title: 'Smart platform for service and field work.',
-		lede: 'Digitized workflows, real-time monitoring and automated reports — maximum efficiency, zero paperwork.',
+		title: 'Your company is losing hours to chaotic admin, not to billable work.',
+		lede: 'You have no visibility into who’s working on what in the field, and planning future jobs turns into chaos — Cordiss cuts the inefficiency with digital workflows, live tracking, and clear team scheduling.',
 		ctaPrimary: 'Request a free demo',
 		ctaGhost: 'See how it works ↓',
 	},
@@ -118,12 +116,10 @@ const en: Dict = {
 	},
 	tear: { from: 'From paper chaos', to: 'to a single digital flow' },
 	results: {
-		titleSuffix: ': efficiency, quantified',
-		sub: 'Cordiss is the company behind your field service platform.',
 		outcomes: [
-			{ tag: '+25%', title: 'Work capacity', desc: 'Growth without extra hires. The smart calendar and live monitoring eliminate idle time.' },
-			{ tag: '30%', title: 'Less admin', desc: 'Digital forms in 3 steps and a real-time timer eliminate manual data entry.' },
-			{ tag: '0', title: 'Zero lost clients', desc: 'A centralized database with advanced filters guarantees no order is ever lost.' },
+			{ tag: '+25%', title: 'Work capacity' },
+			{ tag: '30%', title: 'Less admin' },
+			{ tag: '0', title: 'Zero lost clients' },
 		],
 	},
 	problems: {
@@ -144,7 +140,6 @@ const en: Dict = {
 		office: { who: 'Office', what: 'Admin interface' },
 		field: { who: 'Field', what: 'Mobile app' },
 		nodes: ['ASSIGN', 'EXECUTE', 'SIGNATURE', 'REPORT'],
-		sync: '⇄ Real-time sync',
 		benefits: [
 			'Less paperwork for the technician',
 			'Full monitoring of clients and work hours',
@@ -169,13 +164,13 @@ const en: Dict = {
 	},
 	security: {
 		eyebrow: 'Security',
-		title: 'Professional business infrastructure',
+		title: 'Your data, kept safe',
 		rows: [
-			{ label: 'Authentication', title: 'Secure authentication', desc: 'Access protected by Firebase Auth, with optional two-factor authentication (2FA) for critical company data.' },
-			{ label: 'Roles', title: 'Role-based access', desc: 'Admins have full control; technicians use a simplified interface focused strictly on their own tasks.' },
-			{ label: 'Data storage', title: 'GDPR-compliant storage', desc: 'Service data stays in a secure archive for 30 days after account deactivation, preventing accidental loss.' },
+			{ label: 'Access', title: 'Only your people get in', desc: 'Each employee logs in with their own account — no one outside your team can see your company’s or clients’ data.' },
+			{ label: 'Roles', title: 'Everyone sees only what they need', desc: 'Admins have full access; technicians only see their own jobs, with nothing extra cluttering their view.' },
+			{ label: 'Encryption', title: 'Your data is always encrypted', desc: 'Whether it’s entered from the field app or viewed in the admin panel, data travels and is stored encrypted, protected from unauthorized access.' },
 		],
-		callout: 'Guaranteed compliance: the platform meets European data protection standards, giving peace of mind to managers and clients.',
+		callout: 'Data safety isn’t a marketing line here — it’s simple: controlled access, protected accounts, nothing lost by accident.',
 	},
 	cta: {
 		eyebrow: 'Next step',
@@ -185,11 +180,12 @@ const en: Dict = {
 	form: {
 		headEyebrow: 'Request a demo',
 		headText: 'Fill in the form — we’ll get back to you shortly.',
-		name: 'Name', company: 'Company', email: 'Email *', phone: 'Phone (optional)',
+		name: 'Name *', company: 'Company *', email: 'Email *', phone: 'Phone (optional)',
 		message: 'A few details about your team (optional)',
 		submit: 'Send request', submitting: 'Sending…',
 		success: '✓ Thank you! We received your request and will contact you soon.',
 		error: 'Something went wrong. Please try again or email us at david.daczo@cordiss.com.',
+		required: 'Please fill in your name, company and email.',
 	},
 	contact: { email: 'Email', phone: 'Phone' },
 	footer: {
@@ -202,8 +198,8 @@ const hu: Dict = {
 	meta: { title: 'Cordiss — Helyszíni szerviz platform' },
 	nav: { demo: 'Demó igénylése' },
 	hero: {
-		title: 'Intelligens platform szervizhez és helyszíni munkákhoz.',
-		lede: 'Digitalizált munkafolyamatok, valós idejű követés és automatikus jelentések — maximális hatékonyság, papírmunka nélkül.',
+		title: 'A céged drága órákat veszít a kaotikus adminisztrációban, nem a munkában.',
+		lede: 'Nincs rálátásod arra, ki min dolgozik a terepen, a jövőbeli munkák tervezése pedig káosszá válik — a Cordiss digitális folyamatokkal, élő nyomon követéssel és átlátható ütemezéssel szünteti meg a hatékonyságvesztést.',
 		ctaPrimary: 'Ingyenes demó igénylése',
 		ctaGhost: 'Nézd meg, hogyan működik ↓',
 	},
@@ -213,12 +209,10 @@ const hu: Dict = {
 	},
 	tear: { from: 'A papírkáosztól', to: 'egyetlen digitális folyamatig' },
 	results: {
-		titleSuffix: ': a számszerűsített hatékonyság',
-		sub: 'A Cordiss a helyszíni szerviz platformod mögött álló vállalat.',
 		outcomes: [
-			{ tag: '+25%', title: 'Munkakapacitás', desc: 'Növekedés új munkatársak nélkül. Az intelligens naptár és az élő követés megszünteti a holtidőt.' },
-			{ tag: '30%', title: 'Kevesebb adminisztráció', desc: 'A 3 lépéses digitális űrlapok és a valós idejű időmérő megszüntetik a kézi adatbevitelt.' },
-			{ tag: '0', title: 'Nulla elveszett ügyfél', desc: 'A központosított, szűrhető adatbázis garantálja, hogy egyetlen megrendelés se vesszen el.' },
+			{ tag: '+25%', title: 'Munkakapacitás' },
+			{ tag: '30%', title: 'Kevesebb adminisztráció' },
+			{ tag: '0', title: 'Nulla elveszett ügyfél' },
 		],
 	},
 	problems: {
@@ -239,7 +233,6 @@ const hu: Dict = {
 		office: { who: 'Iroda', what: 'Admin felület' },
 		field: { who: 'Terep', what: 'Mobilalkalmazás' },
 		nodes: ['KIOSZTÁS', 'VÉGREHAJTÁS', 'ALÁÍRÁS', 'JELENTÉS'],
-		sync: '⇄ Valós idejű szinkronizálás',
 		benefits: [
 			'Kevesebb adminisztráció a technikusnak',
 			'100%-os követés az ügyfelek és a munkaórák felett',
@@ -264,13 +257,13 @@ const hu: Dict = {
 	},
 	security: {
 		eyebrow: 'Biztonság',
-		title: 'Professzionális üzleti infrastruktúra',
+		title: 'Az adataid biztonságban',
 		rows: [
-			{ label: 'Hitelesítés', title: 'Biztonságos hitelesítés', desc: 'Firebase Auth által védett hozzáférés, opcionális kétfaktoros hitelesítéssel (2FA) a kritikus céges adatokhoz.' },
-			{ label: 'Szerepkörök', title: 'Szerepkör-alapú hozzáférés', desc: 'Az adminisztrátorok teljes kontrollal rendelkeznek; a technikusok egyszerűsített, kizárólag a saját feladataikra fókuszáló felületet használnak.' },
-			{ label: 'Adattárolás', title: 'GDPR-kompatibilis tárolás', desc: 'A szervizadatok a fiók megszüntetése után 30 napig biztonságos archívumban maradnak, megelőzve a véletlen adatvesztést.' },
+			{ label: 'Hozzáférés', title: 'Csak a te embereid férnek hozzá', desc: 'Minden alkalmazott a saját fiókjával lép be — a csapatodon kívül senki nem láthatja a céged vagy az ügyfeleid adatait.' },
+			{ label: 'Szerepkörök', title: 'Mindenki csak azt látja, amire szüksége van', desc: 'Az adminoknak teljes hozzáférésük van; a technikusok csak a saját munkáikat látják, semmi felesleges adat nem zavarja őket.' },
+			{ label: 'Titkosítás', title: 'Az adataid mindig titkosítva vannak', desc: 'Akár a terepi alkalmazásból, akár az admin felületről nézed, az adatok titkosítva utaznak és tárolódnak, védve az illetéktelen hozzáféréstől.' },
 		],
-		callout: 'Garantált megfelelőség: a platform megfelel az európai adatvédelmi szabványoknak, nyugalmat adva a vezetőknek és az ügyfeleknek.',
+		callout: 'Az adatbiztonság nálunk nem csak egy marketingszlogen — egyszerűen: kontrollált hozzáférés, védett fiókok, semmi nem vész el véletlenül.',
 	},
 	cta: {
 		eyebrow: 'A következő lépés',
@@ -280,11 +273,12 @@ const hu: Dict = {
 	form: {
 		headEyebrow: 'Demó igénylése',
 		headText: 'Töltsd ki az űrlapot — hamarosan felvesszük veled a kapcsolatot.',
-		name: 'Név', company: 'Cég', email: 'Email *', phone: 'Telefon (opcionális)',
+		name: 'Név *', company: 'Cég *', email: 'Email *', phone: 'Telefon (opcionális)',
 		message: 'Néhány részlet a csapatodról (opcionális)',
 		submit: 'Igénylés elküldése', submitting: 'Küldés…',
 		success: '✓ Köszönjük! Megkaptuk az igényed, hamarosan jelentkezünk.',
 		error: 'Hiba történt. Próbáld újra, vagy írj nekünk: david.daczo@cordiss.com.',
+		required: 'Kérjük, add meg a nevet, a céget és az emailt.',
 	},
 	contact: { email: 'Email', phone: 'Telefon' },
 	footer: {

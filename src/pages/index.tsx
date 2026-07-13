@@ -4,20 +4,20 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import {
-	FC, Fragment, FormEvent, useEffect, useState,
+	FC, Fragment, FormEvent, useEffect, useRef, useState,
 } from 'react';
 
 import {
 	Dict, Locale, LOCALES, translations,
 } from '../i18n/translations';
 
-type SubmitStatus = 'idle' | 'sending' | 'success' | 'error';
+type SubmitStatus = 'idle' | 'sending' | 'success' | 'error' | 'invalid';
 
 const FLOW_IMAGES = [
-	{ src: '/images/job-new.png', w: 628, h: 1324 },
-	{ src: '/images/job-active.png', w: 632, h: 1310 },
-	{ src: '/images/signature.png', w: 680, h: 1296 },
-	{ src: '/images/report-preview.png', w: 640, h: 1326 },
+	{ src: '/images/job-new.png', w: 3904, h: 8192 },
+	{ src: '/images/job-active.png', w: 3904, h: 8192 },
+	{ src: '/images/signature.png', w: 3904, h: 8192 },
+	{ src: '/images/report-preview.png', w: 3904, h: 8192 },
 ];
 
 const TIMELINE_TIMES = ['08:14', '16:42', '16:43'];
@@ -48,19 +48,58 @@ const TIMELINE_ICONS = [
 
 const LanguageSelector: FC = () => {
 	const { locale, asPath } = useRouter();
+	const [open, setOpen] = useState(false);
+	const ref = useRef<HTMLDivElement>(null);
+	const current = LOCALES.find((l) => l.code === locale) ?? LOCALES[0];
+
+	useEffect(() => {
+		if (!open) return undefined;
+		const onDocEvent = (e: MouseEvent | KeyboardEvent) => {
+			if (e instanceof KeyboardEvent) {
+				if (e.key === 'Escape') setOpen(false);
+				return;
+			}
+			if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+		};
+		document.addEventListener('mousedown', onDocEvent);
+		document.addEventListener('keydown', onDocEvent);
+		return () => {
+			document.removeEventListener('mousedown', onDocEvent);
+			document.removeEventListener('keydown', onDocEvent);
+		};
+	}, [open]);
+
 	return (
-		<div className='lang-select' aria-label='Language'>
-			{LOCALES.map((l) => (
-				<Link
-					key={l.code}
-					href={asPath}
-					locale={l.code}
-					className={`lang-opt${locale === l.code ? ' active' : ''}`}
-					aria-current={locale === l.code ? 'true' : undefined}
-				>
-					{l.label}
-				</Link>
-			))}
+		<div className='lang-select' ref={ref}>
+			<button
+				type='button'
+				className='lang-trigger'
+				aria-haspopup='listbox'
+				aria-expanded={open}
+				onClick={() => setOpen((v) => !v)}
+			>
+				{current.label}
+				<svg className='lang-chevron' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth={2} strokeLinecap='round' strokeLinejoin='round' aria-hidden='true'>
+					<path d='m6 9 6 6 6-6' />
+				</svg>
+			</button>
+			{open && (
+				<div className='lang-menu' role='listbox'>
+					{LOCALES.filter((l) => l.code !== locale).map((l) => (
+						<Link
+							key={l.code}
+							href={asPath}
+							locale={l.code}
+							className='lang-menu-item'
+							role='option'
+							aria-selected='false'
+							onClick={() => setOpen(false)}
+						>
+							{l.label}
+						</Link>
+					))}
+				</div>
+			)}
 		</div>
 	);
 };
@@ -76,6 +115,10 @@ const ContactForm: FC<{ t: Dict['form'] }> = ({ t }) => {
 	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		if (status === 'sending') return;
+		if (!name.trim() || !company.trim() || !email.trim()) {
+			setStatus('invalid');
+			return;
+		}
 		setStatus('sending');
 		try {
 			const res = await fetch('/api/contact', {
@@ -105,11 +148,11 @@ const ContactForm: FC<{ t: Dict['form'] }> = ({ t }) => {
 			</div>
 			<div className='form-fields'>
 				<input
-					className='field' type='text' name='name' placeholder={t.name}
+					className='field' type='text' name='name' placeholder={t.name} required
 					autoComplete='name' value={name} onChange={(e) => setName(e.target.value)}
 				/>
 				<input
-					className='field' type='text' name='company' placeholder={t.company}
+					className='field' type='text' name='company' placeholder={t.company} required
 					autoComplete='organization' value={company} onChange={(e) => setCompany(e.target.value)}
 				/>
 			</div>
@@ -132,6 +175,7 @@ const ContactForm: FC<{ t: Dict['form'] }> = ({ t }) => {
 			</button>
 			{status === 'success' && <p className='form-msg ok'>{t.success}</p>}
 			{status === 'error' && <p className='form-msg err'>{t.error}</p>}
+			{status === 'invalid' && <p className='form-msg err'>{t.required}</p>}
 		</form>
 	);
 };
@@ -224,6 +268,17 @@ const HomePage: NextPage = () => {
 					</div>
 				</section>
 
+				<div className='wrap hero-outcomes'>
+					<div className='outcomes-strip'>
+						{t.results.outcomes.map((o) => (
+							<div className='outcome-chip' key={o.title}>
+								<div className='tag'>{o.tag}</div>
+								<div className='outcome-chip-title'>{o.title}</div>
+							</div>
+						))}
+					</div>
+				</div>
+
 				<div className='tear'>
 					<p className='tear-text'>
 						<span>{t.tear.from}</span>
@@ -232,31 +287,6 @@ const HomePage: NextPage = () => {
 					</p>
 				</div>
 
-				<section className='section alt' data-reveal>
-					<div className='wrap'>
-						<div className='results-grid'>
-							<div className='shot results-shot'>
-								<Image src='/images/calendar-list.png' alt='Cordiss' width={640} height={1316} />
-							</div>
-							<div>
-								<h2><span className='hl'>Cordiss</span>{t.results.titleSuffix}</h2>
-								<p className='sub'>{t.results.sub}</p>
-								<div className='outcomes-table'>
-									{t.results.outcomes.map((o) => (
-										<div className='outcome-row' key={o.title}>
-											<div className='tag'>{o.tag}</div>
-											<div>
-												<h3>{o.title}</h3>
-												<p>{o.desc}</p>
-											</div>
-										</div>
-									))}
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-
 				<section className='section' id='problema' data-reveal>
 					<div className='wrap'>
 						<div className='section-head'>
@@ -264,14 +294,21 @@ const HomePage: NextPage = () => {
 							<h2>{t.problems.title}</h2>
 							<p className='sub'>{t.problems.sub}</p>
 						</div>
-						<div className='problems'>
-							{t.problems.cards.map((c, i) => (
-								<div className='problem-card' key={c.title}>
-									<div className='num'>{`0${i + 1}`}</div>
-									<h3>{c.title}</h3>
-									<p>{c.desc}</p>
-								</div>
-							))}
+						<div className='problem-grid'>
+							<div className='shot problem-shot'>
+								<Image src='/images/calendar-list.png' alt='Cordiss' width={3904} height={8192} />
+							</div>
+							<div className='problems compact'>
+								{t.problems.cards.map((c, i) => (
+									<div className='problem-card' key={c.title}>
+										<div className='num'>{`0${i + 1}`}</div>
+										<div>
+											<h3>{c.title}</h3>
+											<p>{c.desc}</p>
+										</div>
+									</div>
+								))}
+							</div>
 						</div>
 					</div>
 				</section>
@@ -303,7 +340,6 @@ const HomePage: NextPage = () => {
 										<span className='node' key={n}>{n}</span>
 									))}
 								</div>
-								<div className='connector-sync'>{t.solution.sync}</div>
 							</div>
 
 							<div className='role-box'>
@@ -402,7 +438,7 @@ const HomePage: NextPage = () => {
 					<p className='lede'>{t.cta.lede}</p>
 					<ContactForm t={t.form} />
 					<div className='contact-methods'>
-						<a className='contact-method' href={`mailto:${contactEmail}?subject=Solicitare%20demo%20Cordiss`}>
+						<div className='contact-method'>
 							<span className='cm-icon' aria-hidden='true'>
 								<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth={1.6} strokeLinecap='round' strokeLinejoin='round'>
 									<rect x='3' y='5' width='18' height='14' rx='2' />
@@ -413,7 +449,7 @@ const HomePage: NextPage = () => {
 								<span className='cm-label'>{t.contact.email}</span>
 								<span className='cm-value'>{contactEmail}</span>
 							</span>
-						</a>
+						</div>
 						<a className='contact-method' href='tel:+40744885242'>
 							<span className='cm-icon' aria-hidden='true'>
 								<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth={1.6} strokeLinecap='round' strokeLinejoin='round'>
