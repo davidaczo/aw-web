@@ -14,10 +14,10 @@ import {
 type SubmitStatus = 'idle' | 'sending' | 'success' | 'error' | 'invalid';
 
 const FLOW_IMAGES = [
-	{ src: '/images/job-new.png', w: 3904, h: 8192 },
-	{ src: '/images/job-active.png', w: 3904, h: 8192 },
-	{ src: '/images/signature.png', w: 3904, h: 8192 },
-	{ src: '/images/report-preview.png', w: 3904, h: 8192 },
+	{ src: '/images/job-new.png', w: 800, h: 1678 },
+	{ src: '/images/job-active.png', w: 800, h: 1678 },
+	{ src: '/images/report-preview.png', w: 800, h: 1678 },
+	{ src: '/images/signature.png', w: 800, h: 1678 },
 ];
 
 const TIMELINE_TIMES = ['08:14', '16:42', '16:43'];
@@ -296,7 +296,7 @@ const HomePage: NextPage = () => {
 						</div>
 						<div className='problem-grid'>
 							<div className='shot problem-shot'>
-								<Image src='/images/calendar-list.png' alt='Cordiss' width={3904} height={8192} />
+								<Image src='/images/calendar-list.png' alt='Cordiss' width={800} height={1678} />
 							</div>
 							<div className='problems compact'>
 								{t.problems.cards.map((c, i) => (
@@ -319,6 +319,20 @@ const HomePage: NextPage = () => {
 							<div className='eyebrow'>{t.solution.eyebrow}</div>
 							<h2>{t.solution.title}</h2>
 							<p className='sub'>{t.solution.sub}</p>
+						</div>
+
+						<div className='flow-strip'>
+							{t.solution.flow.map((f, i) => (
+								<Fragment key={f.label}>
+									{i > 0 && <span className='flow-arrow'>→</span>}
+									<div className='flow-step'>
+										<div className='shot small'>
+											<Image src={FLOW_IMAGES[i].src} alt={f.alt} width={FLOW_IMAGES[i].w} height={FLOW_IMAGES[i].h} />
+										</div>
+										<div className='flow-label'>{`0${i + 1} · ${f.label}`}</div>
+									</div>
+								</Fragment>
+							))}
 						</div>
 
 						<div className='roles'>
@@ -362,20 +376,6 @@ const HomePage: NextPage = () => {
 								</li>
 							))}
 						</ul>
-
-						<div className='flow-strip'>
-							{t.solution.flow.map((f, i) => (
-								<Fragment key={f.label}>
-									{i > 0 && <span className='flow-arrow'>→</span>}
-									<div className='flow-step'>
-										<div className='shot small'>
-											<Image src={FLOW_IMAGES[i].src} alt={f.alt} width={FLOW_IMAGES[i].w} height={FLOW_IMAGES[i].h} />
-										</div>
-										<div className='flow-label'>{`0${i + 1} · ${f.label}`}</div>
-									</div>
-								</Fragment>
-							))}
-						</div>
 					</div>
 				</section>
 

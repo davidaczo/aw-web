@@ -327,7 +327,7 @@ header {
 .flow-strip { display: flex; align-items: flex-start; gap: 14px; margin-top: 48px; }
 .flow-step { flex: 1; min-width: 0; text-align: center; }
 .flow-step .shot { max-width: 100%; margin: 0 auto; }
-.flow-label { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 10px; }
+.flow-label { font-family: var(--sans); font-size: 15px; font-weight: 700; color: var(--ink); letter-spacing: 0.01em; margin-top: 14px; }
 .flow-arrow { flex: none; align-self: center; margin-top: 70px; color: var(--accent); font-size: 18px; }
 
 .benefit-list { list-style: none; margin: 36px 0 0; padding: 0; display: grid; gap: 12px; }

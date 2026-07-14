@@ -44,7 +44,7 @@ const ro = {
 		sub: 'O platformă cu două roluri care conectează biroul și terenul — de la alocarea lucrării până la semnătura clientului.',
 		office: { who: 'Birou', what: 'Interfața Admin' },
 		field: { who: 'Teren', what: 'Aplicația mobilă' },
-		nodes: ['ALOCARE', 'EXECUȚIE', 'SEMNĂTURĂ', 'RAPORT'],
+		nodes: ['ALOCARE', 'EXECUȚIE', 'RAPORT', 'SEMNĂTURĂ'],
 		benefits: [
 			'Mai puțină birocrație pentru tehnician',
 			'Monitorizare 100% pentru clienți și orele de lucru',
@@ -53,8 +53,8 @@ const ro = {
 		flow: [
 			{ label: 'Alocare', alt: 'Creare lucrare nouă în 4 pași' },
 			{ label: 'Execuție', alt: 'Sesiune de lucru activă, cronometrată în timp real' },
-			{ label: 'Semnătură', alt: 'Semnătură digitală a clientului pe ecranul telefonului' },
-			{ label: 'Raport', alt: 'Raport PDF generat automat' },
+			{ label: 'Raport', alt: 'Raport PDF generat automat, pregătit pentru client' },
+			{ label: 'Semnătură', alt: 'Clientul semnează digital raportul, confirmând lucrarea' },
 		],
 	},
 	timeline: {
@@ -139,7 +139,7 @@ const en: Dict = {
 		sub: 'A two-role platform that connects the office and the field — from job assignment to the client’s signature.',
 		office: { who: 'Office', what: 'Admin interface' },
 		field: { who: 'Field', what: 'Mobile app' },
-		nodes: ['ASSIGN', 'EXECUTE', 'SIGNATURE', 'REPORT'],
+		nodes: ['ASSIGN', 'EXECUTE', 'REPORT', 'SIGNATURE'],
 		benefits: [
 			'Less paperwork for the technician',
 			'Full monitoring of clients and work hours',
@@ -148,8 +148,8 @@ const en: Dict = {
 		flow: [
 			{ label: 'Assignment', alt: 'Create a new job in 4 steps' },
 			{ label: 'Execution', alt: 'Active work session, timed in real time' },
-			{ label: 'Signature', alt: 'Client’s digital signature on the phone screen' },
-			{ label: 'Report', alt: 'PDF report generated automatically' },
+			{ label: 'Report', alt: 'Automatically generated PDF report, ready for the client' },
+			{ label: 'Signature', alt: 'Client digitally signs the report, confirming the work' },
 		],
 	},
 	timeline: {
@@ -232,7 +232,7 @@ const hu: Dict = {
 		sub: 'Kétszerepes platform, amely összeköti az irodát és a terepet — a munka kiosztásától az ügyfél aláírásáig.',
 		office: { who: 'Iroda', what: 'Admin felület' },
 		field: { who: 'Terep', what: 'Mobilalkalmazás' },
-		nodes: ['KIOSZTÁS', 'VÉGREHAJTÁS', 'ALÁÍRÁS', 'JELENTÉS'],
+		nodes: ['KIOSZTÁS', 'VÉGREHAJTÁS', 'JELENTÉS', 'ALÁÍRÁS'],
 		benefits: [
 			'Kevesebb adminisztráció a technikusnak',
 			'100%-os követés az ügyfelek és a munkaórák felett',
@@ -241,8 +241,8 @@ const hu: Dict = {
 		flow: [
 			{ label: 'Kiosztás', alt: 'Új munka létrehozása 4 lépésben' },
 			{ label: 'Végrehajtás', alt: 'Aktív munkamenet, valós időben mérve' },
-			{ label: 'Aláírás', alt: 'Az ügyfél digitális aláírása a telefon képernyőjén' },
-			{ label: 'Jelentés', alt: 'Automatikusan generált PDF jelentés' },
+			{ label: 'Jelentés', alt: 'Automatikusan generált PDF jelentés, ügyfélnek bemutatva' },
+			{ label: 'Aláírás', alt: 'Az ügyfél digitálisan aláírja a jelentést, elfogadva a munkát' },
 		],
 	},
 	timeline: {
